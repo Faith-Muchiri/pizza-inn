@@ -1,8 +1,12 @@
 import React from 'react'
+import Footer from './Footer'
 
 function HomePage() {
   return (
-    <div>HomePage</div>
+    <>
+      <div>HomePage</div>
+      <Footer />
+    </>
   )
 }
 

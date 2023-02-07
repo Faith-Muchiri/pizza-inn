@@ -9,10 +9,19 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
+          <Link to="/">Menu</Link>
+        </li>
+        <li>
+          <Link to="/">Services</Link>
+        </li>
+        <li>
+          <Link to="/">Blog</Link>
+        </li>
+        <li>
           <Link to="/about">About</Link>
         </li>
         <li>
-          <Link to="/pizzas">Pizzas</Link>
+          <Link to="/pizzas">Contact</Link>
         </li>
       </ul>
     </nav>

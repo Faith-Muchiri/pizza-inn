@@ -1,51 +1,61 @@
-import React from 'react'
-import './navbar.css'
-import {Link} from 'react-router-dom'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import LocalPizzaIcon from "@mui/icons-material/LocalPizza";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Box,
+  CssBaseline,
+  Tabs,
+  Tab,
+  Button,
+} from "@mui/material";
 
 function NavBar() {
+  const [value, setValue] = useState();
   return (
-    <nav className="navbar">
-      <div>
-        <Link to="/" className="navbar-item logo">
-          🍕<span>Pizza</span><br/>Delicious
-        </Link>
-      </div>
-      <div>
-        <ul>
-          <li>
-            <Link to="/" className="navbar-item active">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/menu" className="navbar-item">
-              Menu
-            </Link>
-          </li>
-          <li>
-            <Link to="/services" className="navbar-item">
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" className="navbar-item">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="navbar-item">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="navbar-item">
-              Contact
-            </Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <AppBar position="static" sx={{ background: "black", padding: "10px" }}>
+      <CssBaseline />
+      <Toolbar>
+        <LocalPizzaIcon />
+        {/* <Typography variant="h6">🍕Pizza Delicious</Typography> */}
+
+        <Tabs
+          textColor="inherit"
+          value={value}
+          onChange={(e, setValue) => setValue(value)}
+          indicatorColor="secondary"
+        >
+          {/* <Link to="/" className="navbar-item active"> */}
+            <Tab label="Home" />
+          {/* </Link> */}
+          {/* <Link to="/menu" className="navbar-item active"> */}
+            <Tab label="Menu" />
+          {/* </Link> */}
+          {/* <Link to="/services" className="navbar-item active"> */}
+            <Tab label="Services" />
+          {/* </Link> */}
+          {/* <Link to="/blog" className="navbar-item active"> */}
+            <Tab label="Blog" />
+          {/* </Link> */}
+          {/* <Link to="/about" className="navbar-item active"> */}
+            <Tab label="About" />
+          {/* </Link> */}
+          {/* <Link to="/contact" className="navbar-item active"> */}
+            <Tab label="Contact" />
+          {/* </Link> */}
+        </Tabs>
+
+        <Button variant="contained" sx={{ marginLeft: "auto" }}>
+          Login
+        </Button>
+        <Button variant="contained" sx={{ marginLeft: "10px", gap: 2 }}>
+          Signup
+        </Button>
+      </Toolbar>
+    </AppBar>
   );
 }
 
-export default NavBar
+export default NavBar;

@@ -23,19 +23,19 @@ function NavBar() {
     <AppBar position="static" sx={{ background: "black", padding: "10px" }}>
       <CssBaseline />
       <Toolbar>
+        <LocalPizzaIcon />
         {isMatch ? (
           <>
-            <LocalPizzaIcon/>
-            <DrawerComponent/>
+            <DrawerComponent />
           </>
         ) : (
           <>
             <Tabs
-              sx={{ margin: "0 auto" }}
+              sx={{ marginLeft: "auto" }}
+              indicatorColor="secondary"
               textColor="inherit"
               value={value}
-              onChange={(e, setValue) => setValue(value)}
-              indicatorColor="secondary"
+              onChange={(e, value) => setValue(value)}
             >
               {Pages.map((page, index) => (
                 <Tab key={index} label={page} />

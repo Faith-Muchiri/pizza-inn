@@ -4,7 +4,7 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import PizzaListPage from "./pages/PizzaListPage";
 import PizzaPage from "./pages/PizzaPage";
-import NavBar from "./components/NavBar/NavBar";
+import NavBar from "./components/NavBar";
 import NotFoundPage from "./pages/NotFoundPage";
 import Contact from "./pages/Contact";
 import Menu from "./pages/Menu/Menu";

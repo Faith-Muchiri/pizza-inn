@@ -8,17 +8,19 @@ import {
   ListItemText,
 } from "@mui/material/";
 import MenuIcon from "@mui/icons-material/Menu";
+import { Link } from "react-router-dom";
 
 const Pages = [
-  "Home",
-  "Menu",
-  "Services",
-  "Blog",
-  "About",
-  "Contact",
-  "Login",
-  "Logout",
+  { name: "Home", path: "/" },
+  { name: "Menu", path: "/menu" },
+  { name: "Services", path: "/services" },
+  { name: "Blog", path: "/blog" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+  { name: "Login", path: "/login" },
+  { name: "Logout", path: "/logout" },
 ];
+
 function DrawerComponent() {
   const [openDrawer, setOpenDrawer] = useState(false);
   return (
@@ -26,11 +28,11 @@ function DrawerComponent() {
       <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
         <List>
           {Pages.map((page, index) => (
-            <ListItemButton key={index} onClick={()=> setOpenDrawer(false)}>
-              <ListItemIcon>
-                <ListItemText>{page}</ListItemText>
-              </ListItemIcon>
-            </ListItemButton>
+            <Link to={page.path} key={index} style={{ textDecoration: "none" }}>
+              <ListItemButton onClick={() => setOpenDrawer(false)}>
+                <ListItemText>{page.name}</ListItemText>
+              </ListItemButton>
+            </Link>
           ))}
         </List>
       </Drawer>

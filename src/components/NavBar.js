@@ -9,16 +9,24 @@ import {
   Tab,
   Button,
   useMediaQuery,
-  useTheme
+  useTheme,
 } from "@mui/material";
 import DrawerComponent from "./DrawerComponent";
 
-const Pages = ["Home", "Menu", "Services", "Blog", "About", "Contact"]
+const Pages = [
+  { name: "Home", path: "/" },
+  { name: "Menu", path: "/menu" },
+  { name: "Services", path: "/services" },
+  { name: "Blog", path: "/blog" },
+  { name: "About", path: "/about" },
+  { name: "Contact", path: "/contact" },
+];
+
 function NavBar() {
   const [value, setValue] = useState();
-  const theme = useTheme()
-  const isMatch = useMediaQuery(theme.breakpoints.down("md"))
-  // console.log(theme)
+  const theme = useTheme();
+  const isMatch = useMediaQuery(theme.breakpoints.down("md"));
+
   return (
     <AppBar position="static" sx={{ background: "black", padding: "10px" }}>
       <CssBaseline />
@@ -38,7 +46,9 @@ function NavBar() {
               onChange={(e, value) => setValue(value)}
             >
               {Pages.map((page, index) => (
-                <Tab key={index} label={page} />
+                <Link to={page.path} key={index}>
+                  <Tab label={page.name} />
+                </Link>
               ))}
             </Tabs>
 
